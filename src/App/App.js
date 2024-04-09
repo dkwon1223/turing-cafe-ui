@@ -42,6 +42,24 @@ function App() {
       .catch(error => console.log(error));
   }
 
+  // async function deleteReservation(id) {
+  //   await fetch(`http://localhost:3001/api/v1/reservations/${id}`, 
+  //     {
+  //       method: "DELETE",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       }
+  //     }
+  //   )
+  //     .then(response => {
+  //       if(!response.ok) {
+  //         throw new Error(`There was an error deleting that reservation.`);
+  //       }
+  //       fetchReservations();
+  //     })
+  //     .catch(error => console.log(error));
+  // }
+
   useEffect(() => {
     fetchReservations();
   }, [])
@@ -55,7 +73,7 @@ function App() {
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
       <ReservationForm addReservation={addReservation} postReservation={postReservation}/>
-      {reservations ? <ReservationCards reservations={reservations}/> : <h2>Loading...</h2>}
+      {reservations ? <ReservationCards reservations={reservations} /> : <h2>Loading...</h2>}
     </div>
   );
 }

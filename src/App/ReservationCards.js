@@ -12,6 +12,7 @@ function ReservationCards({ reservations }) {
         guests={reservation.number}
         id={reservation.id}
         key={reservation.id}
+        // deleteReservation={deleteReservation}
       />
     )
   })
