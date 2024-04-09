@@ -6,24 +6,25 @@ function ReservationForm({ addReservation }) {
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
-    const [guests, setGuests] = useState("");
+    const [number, setNumber] = useState(0);
 
     function submitReservation(event) {
         event.preventDefault();
-        console.log("clicked");
         const newReservation = {
             id: Date.now(),
             name,
             date,
             time,
-            guests
+            number
         }
+        console.log(newReservation);
         addReservation(newReservation);
     }
 
   return (
     <section className="reservation-form">
       <input
+        required
         type="text"
         placeholder="Name"
         name="name"
@@ -31,6 +32,7 @@ function ReservationForm({ addReservation }) {
         onChange={event => setName(event.target.value)}
       />
       <input
+        required
         type="date"
         placeholder="Date (mm/dd)"
         name="date"
@@ -38,6 +40,7 @@ function ReservationForm({ addReservation }) {
         onChange={event => setDate(event.target.value)}
       />
       <input
+        required
         type="time"
         placeholder="Time"
         name="time"
@@ -45,11 +48,12 @@ function ReservationForm({ addReservation }) {
         onChange={event => setTime(event.target.value)}
       />
       <input
+        required
         type="number"
         placeholder="Number of Guests"
         name="numGuests"
-        value={guests}
-        onChange={event => setGuests(event.target.value)}
+        value={number}
+        onChange={event => setNumber(parseInt(event.target.value))}
       />
       <button className="reservation-form-button" onClick={event => submitReservation(event)}>Make Reservation</button>
     </section>
