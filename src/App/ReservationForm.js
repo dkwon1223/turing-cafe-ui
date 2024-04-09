@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./ReservationForm.css";
 
-function ReservationForm({ addReservation }) {
+function ReservationForm({ addReservation, postReservation }) {
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
@@ -19,6 +19,7 @@ function ReservationForm({ addReservation }) {
         }
         console.log(newReservation);
         addReservation(newReservation);
+        postReservation(newReservation);
     }
 
   return (

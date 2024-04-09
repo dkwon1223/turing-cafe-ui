@@ -23,6 +23,25 @@ function App() {
       })
   }
 
+  async function postReservation(reservation) {
+    await fetch("http://localhost:3001/api/v1/reservations", 
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(reservation)
+      }
+    )
+      .then(response => {
+        if(!response.ok) {
+          throw new Error(`There was an error posting ${reservation}`);
+        }
+        fetchReservations();
+      })
+      .catch(error => console.log(error));
+  }
+
   useEffect(() => {
     fetchReservations();
   }, [])
@@ -35,7 +54,7 @@ function App() {
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
-      <ReservationForm addReservation={addReservation}/>
+      <ReservationForm addReservation={addReservation} postReservation={postReservation}/>
       {reservations ? <ReservationCards reservations={reservations}/> : <h2>Loading...</h2>}
     </div>
   );
