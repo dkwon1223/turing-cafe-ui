@@ -15,7 +15,7 @@ function ReservationCards({ reservations }) {
       />
     )
   })
-
+  
   return (
     <div className='resy-container'>
       {resCards}
