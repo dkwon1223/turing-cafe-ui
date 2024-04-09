@@ -17,9 +17,9 @@ function ReservationCards({ reservations }) {
   })
   
   return (
-    <div className='resy-container'>
+    <section className='reservation-container'>
       {resCards}
-    </div>
+    </section>
   )
 }
 

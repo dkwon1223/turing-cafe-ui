@@ -1,7 +1,8 @@
-.resy-container {
+.reservation-container {
     height: 70%;
-    width: 100%;
+    width: 95%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 3%;
+    overflow-y: auto;
   }

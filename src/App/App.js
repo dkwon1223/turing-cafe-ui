@@ -1,6 +1,7 @@
 import './App.css';
 import React, {  useState, useEffect } from 'react';
 import ReservationCards from './ReservationCards';
+import ReservationForm from './ReservationForm';
 
 
 function App() {
@@ -26,13 +27,16 @@ function App() {
     fetchReservations();
   }, [])
 
+  function addReservation(reservation) {
+    setReservations([...reservations, reservation]);
+  }
+
 
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
-      <div className='resy-form'>
-      </div>
-      <ReservationCards reservations={reservations}/>
+      <ReservationForm addReservation={addReservation}/>
+      {reservations ? <ReservationCards reservations={reservations}/> : <h2>Loading...</h2>}
     </div>
   );
 }

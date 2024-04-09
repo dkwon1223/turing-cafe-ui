@@ -1,0 +1,20 @@
+.reservation-form {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+input {
+    height: 50%;
+    width: 15%;
+}
+
+.reservation-form-button {
+    height: 60%;
+    width: 15%;
+    background-color: #008080;
+    color: white;
+    border: white solid 1px;
+    cursor: pointer;
+}
