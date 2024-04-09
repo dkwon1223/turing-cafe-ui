@@ -24,7 +24,6 @@ function ReservationForm({ addReservation }) {
   return (
     <section className="reservation-form">
       <input
-        required
         type="text"
         placeholder="Name"
         name="name"
@@ -32,7 +31,6 @@ function ReservationForm({ addReservation }) {
         onChange={event => setName(event.target.value)}
       />
       <input
-        required
         type="date"
         placeholder="Date (mm/dd)"
         name="date"
@@ -40,7 +38,6 @@ function ReservationForm({ addReservation }) {
         onChange={event => setDate(event.target.value)}
       />
       <input
-        required
         type="time"
         placeholder="Time"
         name="time"
@@ -48,7 +45,6 @@ function ReservationForm({ addReservation }) {
         onChange={event => setTime(event.target.value)}
       />
       <input
-        required
         type="number"
         placeholder="Number of Guests"
         name="numGuests"
