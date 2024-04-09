@@ -1,5 +1,6 @@
 import './App.css';
 import React, {  useState, useEffect } from 'react';
+import ReservationCards from './ReservationCards';
 
 
 function App() {
@@ -25,23 +26,13 @@ function App() {
     fetchReservations();
   }, [])
 
+
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
       <div className='resy-form'>
       </div>
-      <div className='resy-container'>
-        {reservations.map((reservation) => {
-          return (
-            <section className='reservation-card'>
-              <h2>{reservation.name}</h2>
-              <p>{reservation.date}</p>
-              <p>{reservation.time}</p>
-              <p>Number of guests {reservation.number}</p>
-            </section>
-          )
-        })}
-      </div>
+      <ReservationCards reservations={reservations}/>
     </div>
   );
 }
